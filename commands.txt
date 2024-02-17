@@ -6,3 +6,6 @@ npx prisma migrate dev
 package.json > scripts:
     "postinstall": "prisma generate"
 npx prisma generate
+npm i vercel -g
+vercel login
+vercel
