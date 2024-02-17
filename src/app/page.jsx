@@ -7,7 +7,7 @@ async function loadTasks() {
   return await prisma.task.findMany();
 }
 
-export const revalidate = 0;
+export const revalidate = 30;
 
 async function HomePage() {
   const tasks = await loadTasks();
