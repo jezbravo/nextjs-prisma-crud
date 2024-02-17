@@ -74,9 +74,34 @@ function NewPage({ params }) {
           onChange={(e) => setDescription(e.target.value)}
           value={description}
         ></textarea>
-        <button className="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700">
-          Crear
-        </button>
+        <div className="flex justify-between">
+          <button
+            className="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
+            type="submit"
+          >
+            Crear
+          </button>
+          {params.id && (
+            <button
+              className="rounded bg-red-500 px-4 py-2 font-bold text-white hover:bg-red-700"
+              type="button"
+              onClick={async () => {
+                if (confirm("¿Está seguro de eliminar la tarea?")) {
+                  const res = await fetch(`/api/tasks/${params.id}`, {
+                    method: "DELETE",
+                  });
+                  const data = await res.json();
+                  console.log(data);
+                  alert("Tarea eliminada!");
+                  router.push("/");
+                  router.refresh();
+                }
+              }}
+            >
+              Eliminar
+            </button>
+          )}
+        </div>
       </form>
     </div>
   );
