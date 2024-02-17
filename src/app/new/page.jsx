@@ -79,7 +79,8 @@ function NewPage({ params }) {
             className="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
             type="submit"
           >
-            Crear
+            {params.id && "Editar"}
+            {!params.id && "Crear"}
           </button>
           {params.id && (
             <button
