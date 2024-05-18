@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js + Prisma CRUD
 
-## Getting Started
+## Description
 
-First, run the development server:
+This is a classic to-do app. The user will be able to create, read, update and delete tasks in a minimalist but elegant interface.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### Stack
+
+- HTML
+- TailwindCSS
+- JavaScript
+- Next.js
+- Prisma
+- PostreSQL
+- Vercel
+
+## Setup
+
+First of all you must clone the repository:
+
+```sh
+git clone https://github.com/jezbravo/nextjs-prisma-crud.git
+cd nextjs-prisma-crud
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then install the dependencies:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```node
+npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Environment Variables
 
-## Learn More
+In order for the program to work correctly, it is necessary to configure the following environment variables in an **.env** file at the root of the project:
 
-To learn more about Next.js, take a look at the following resources:
+```javascript
+POSTGRES_PRISMA_URL=
+POSTGRES_URL_NON_POOLING=
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Both keys are obtained in the storage configuration provided by Vercel.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Once everything is ready:
 
-## Deploy on Vercel
+```javascript
+npm run dev
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Demo
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The interface tries to be as intuitive and friendly as possible. The page displays a grid with created tasks. Each task can be selected to be updated or deleted. There is also a navigation bar that makes it possible to go to the home page, create a new task, or view the typical "about us" information.
+
+You can test a deployed version at the following link: https://nextjs-prisma-crud-smoky.vercel.app
